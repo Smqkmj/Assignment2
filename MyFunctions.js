@@ -5,36 +5,35 @@ function each(cb, array1) {
     for (let i = 0; i < array1.length; i++) {
         cb(array1[i])
     }
-
 }
 
 function callback(num) {
     console.log(num)
 }
-
-
-
 console.log("forEach()**************************************************************************")
 each(callback, array1)
 // expected output: "a"
 // expected output: "b"
 // expected output: "c"
+
 //Map**************************************************************************
 const map1 = [{ key: 'a', value: 1 }, { key: 'b', value: 2 }, { key: 'c', value: 3 }]
 
 function myMap(cb, map1) {
     cb(map1[0].value)
+    // expected output: 1
     map1[0].value = 97
     cb(map1[0].value)
+    // expected output: 97
     cb(map1.length)
+    // expected output: 3
     map1.splice(1, 1)
     cb(map1.length)
+    // expected output: 2
 }
-
 function callback1(aNum) {
     console.log(aNum)
 }
-
 console.log("Map**************************************************************************")
 myMap(callback1, map1)
 
@@ -110,6 +109,8 @@ function callback5(num) {
 }
 console.log("Reduce**************************************************************************")
 reduce(callback5, array4)
+// expected output: 10
+// expected output: 15
 //Includes**************************************************************************")
 const array5 = [1, 2, 3];
 const pets = ['cat', 'dog', 'bat'];
@@ -138,6 +139,9 @@ function callback6(num) {
 }
 console.log("Includes**************************************************************************")
 Includes(callback6, array5, pets)
+// expected output: true
+// expected output: true
+// expected output: false
 
 //indexOf**************************************************************************
 const beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
@@ -153,6 +157,9 @@ function callback7(num) {
 }
 console.log("indexOf**************************************************************************")
 indexOf(callback7, beasts)
+// expected output: 1
+// expected output: 4
+// expected output: -1
 
 //Push**************************************************************************
 const animals = ['pigs', 'goats', 'sheep'];
@@ -170,6 +177,9 @@ function callback8(num) {
 }
 console.log("Push**************************************************************************")
 Push(callback8, animals)
+// expected output: 4
+// expected output: Array ["pigs", "goats", "sheep", "cows"]
+// expected output: Array ["pigs", "goats", "sheep", "cows", "chickens", "cats", "dogs"]
 
 //lastIndexOf**************************************************************************
 const animals1 = ['Dodo', 'Tiger', 'Penguin', 'Dodo'];
@@ -192,6 +202,8 @@ function callback9(num) {
 }
 console.log("lastIndexOf**************************************************************************")
 lastIndex(callback9, animals1)
+// expected output: 3
+// expected output: 1
 
 //Object.keys()**************************************************************************
 const object1 = [
